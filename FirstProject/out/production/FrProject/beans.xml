@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 导入 schema
+约束的位置在:
+..\spring-framework-4.2.4.RELEASE\docs\spring-framework-reference\html\xsd-configuration.html
+文件中。注意：要导入 schema 约束
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="pageService" class="com.icis.service.PageService">
+        <property name="pageDao" ref="ppageDao" />
+        <property name="mapper" ref="omapper"/>
+     </bean>
+    <bean id="omapper" class="com.fasterxml.jackson.databind.ObjectMapper"></bean>
+    <bean id="ppageDao" class="com.icis.dao.PageDao"/>
+
+
+
+
+
+    <bean id="userService" class="com.icis.service.UserService">
+    <property name="userDao" ref="userDao"></property>
+     </bean>
+    <bean id="userDao" class="com.icis.dao.UserDao"/>
+
+    <bean id="userServiceImpl" class="com.icis.service.impl.UserServiceImpl">
+        <property name="userDao" ref="iuserDao"/>
+    </bean>
+    <bean id="iuserDao" class="com.icis.dao.impl.UserDaoImpl"></bean>
+
+    <bean id="loginService" class="com.icis.service.LoginService">
+        <property name="loginDao" ref="loginDao"></property>
+     </bean>
+    <bean id="loginDao" class="com.icis.dao.LoginDao"/>
+
+</beans>
