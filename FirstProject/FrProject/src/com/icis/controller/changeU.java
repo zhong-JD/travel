@@ -24,7 +24,7 @@ public class changeU extends HttpServlet {
     private UserService userService = (UserService) ApplicationUtil.getContext().getBean("userService");
 
     @Test
-    public void name() {
+    public void name1() {
         System.out.println(userService.getUserDao()+"");
     }
 
