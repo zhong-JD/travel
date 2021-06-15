@@ -29,7 +29,7 @@ public class AddU extends HttpServlet {
     }
 
     @Test
-    public void test(){
+    public void test1(){
         System.out.println(mapper +""+ userService.getUserDao());
     }
 
